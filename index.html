@@ -172,6 +172,7 @@
         const FILES = {
             pictures: [
                 'pictures/1.jpg',
+				'pictures/2.jpg',
                 'pictures/8.jpg',
 				'pictures/9.jpg',
 				'pictures/3.jpg',
@@ -179,12 +180,18 @@
                 'pictures/6.jpg',
 				'pictures/7.jpg',				
 				'pictures/4.jpg',
-				'pictures/2.jpg',
 				'pictures/10.jpg',
+				'pictures/11.jpg',
+				'pictures/12.jpg',
+				'pictures/13.jpg',
             ],
             texts: [
                 'texts/1.txt',
-                'texts/2.txt'
+				'texts/3.txt',
+				'texts/5.txt',
+                'texts/2.txt',
+                'texts/4.txt',				
+                'texts/6.txt',
             ],
             videos: [
                 'videos/1.mp4',
@@ -271,7 +278,7 @@
                     texts.push({
                         title: path.split('/').pop().replace('.txt', ''),
                         content: `无法加载此文本内容 (${path})`,
-                        author: '系统'
+                        author: 'candy'
                     });
                 }
             }
