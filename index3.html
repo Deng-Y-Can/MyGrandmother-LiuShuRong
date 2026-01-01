@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘淑容奶奶 · 永恒的思念</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vintage: {
+                            cream: '#FDF6F0',
+                            parchment: '#FAF0E6',
+                            terracotta: '#D67D3E',
+                            sage: '#8FBC8F',
+                            deepbrown: '#5C4033',
+                            rose: '#E6A4B4',
+                            gold: '#D4AF37',
+                            copper: '#B87333',
+                            charcoal: '#36454F'
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Noto Serif SC', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-gentle': 'pulseGentle 2s infinite',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'zoom-in': 'zoomIn 0.5s ease-out',
+                        'text-glow': 'textGlow 2s infinite alternate',
+                        'border-flow': 'borderFlow 4s linear infinite'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(30px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        pulseGentle: {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.7 }
+                        },
+                        slideInLeft: {
+                            '0%': { transform: 'translateX(-50px)', opacity: 0 },
+                            '100%': { transform: 'translateX(0)', opacity: 1 }
+                        },
+                        slideInRight: {
+                            '0%': { transform: 'translateX(50px)', opacity: 0 },
+                            '100%': { transform: 'translateX(0)', opacity: 1 }
+                        },
+                        zoomIn: {
+                            '0%': { transform: 'scale(0.9)', opacity: 0 },
+                            '100%': { transform: 'scale(1)', opacity: 1 }
+                        },
+                        textGlow: {
+                            '0%': { textShadow: '0 0 10px rgba(214, 125, 62, 0.3)' },
+                            '100%': { textShadow: '0 0 20px rgba(214, 125, 62, 0.6)' }
+                        },
+                        borderFlow: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                            '100%': { backgroundPosition: '0% 50%' }
+                        }
+                    },
+                    backgroundImage: {
+                        'vintage-paper': "url('data:image/svg+xml,%3Csvg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noise\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.9\" numOctaves=\"1\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100\" height=\"100\" filter=\"url(%23noise)\" opacity=\"0.08\"/%3E%3C/svg%3E')",
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+        
+        :root {
+            --scrollbar-thumb: #D67D3E;
+            --scrollbar-track: #FAF0E6;
+        }
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #FDF6F0 0%, #FAF0E6 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--scrollbar-track);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #D67D3E, #B87333);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #B87333, #D67D3E);
+        }
+        
+        /* 纸张纹理 */
+        .paper-texture {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.6) 0%, transparent 20%),
+                url('data:image/svg+xml,%3Csvg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="200" height="200" filter="url(%23noise)" opacity="0.1"/%3E%3C/svg%3E');
+            background-size: cover;
+        }
+        
+        /* 记忆卡片效果 */
+        .memory-card {
+            background: linear-gradient(145deg, #ffffff, #f5f5f5);
+            border-radius: 24px;
+            box-shadow: 
+                0 20px 60px rgba(92, 64, 51, 0.1),
+                0 1px 3px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .memory-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #D67D3E, #8FBC8F, #D4AF37);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .memory-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 30px 80px rgba(92, 64, 51, 0.15),
+                0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .memory-card:hover::before {
+            opacity: 1;
+        }
+        
+        /* 标题效果 */
+        .vintage-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .vintage-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D67D3E, transparent);
+        }
+        
+        /* 轮播容器 */
+        .carousel-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                inset 0 0 20px rgba(0, 0, 0, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(45deg, rgba(214, 125, 62, 0.05), rgba(143, 188, 143, 0.05));
+        }
+        
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform: scale(0.95);
+            z-index: 1;
+        }
+        
+        .carousel-slide.active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 2;
+        }
+        
+        /* 文字轮播特殊效果 */
+        .text-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+        }
+        
+        .text-content {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .text-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D67D3E, transparent);
+        }
+        
+        .text-content::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8FBC8F, transparent);
+        }
+        
+        /* 控制按钮 */
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(214, 125, 62, 0.2);
+            color: #5C4033;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 8px 32px rgba(92, 64, 51, 0.1),
+                0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .carousel-control:hover {
+            transform: translateY(-50%) scale(1.15);
+            background: linear-gradient(135deg, #ffffff, #f8f8f8);
+            border-color: rgba(214, 125, 62, 0.5);
+            box-shadow: 
+                0 12px 40px rgba(92, 64, 51, 0.2),
+                0 4px 12px rgba(0, 0, 0, 0.1);
+            color: #D67D3E;
+        }
+        
+        .carousel-control.prev {
+            left: 20px;
+        }
+        
+        .carousel-control.next {
+            right: 20px;
+        }
+        
+        /* 指示器 */
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(92, 64, 51, 0.2);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel-indicator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #D67D3E, #8FBC8F);
+            transition: left 0.3s ease;
+        }
+        
+        .carousel-indicator.active {
+            width: 36px;
+            border-radius: 18px;
+            background: linear-gradient(90deg, #D67D3E, #8FBC8F);
+            box-shadow: 0 0 15px rgba(214, 125, 62, 0.5);
+        }
+        
+        .carousel-indicator.active::before {
+            left: 0;
+        }
+        
+        /* 加载动画 */
+        .loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(253, 246, 240, 0.9), rgba(250, 240, 230, 0.9));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 30;
+            backdrop-filter: blur(10px);
+        }
+        
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(214, 125, 62, 0.1);
+            border-top: 4px solid #D67D3E;
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite, colorChange 3s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes colorChange {
+            0%, 100% { border-top-color: #D67D3E; }
+            33% { border-top-color: #8FBC8F; }
+            66% { border-top-color: #D4AF37; }
+        }
+        
+        /* 装饰元素 */
+        .floating-ornament {
+            position: fixed;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.1;
+            filter: blur(1px);
+        }
+        
+        /* 复古印章效果 */
+        .seal-effect {
+            font-family: 'Ma Shan Zheng', cursive;
+            color: #D67D3E;
+            text-shadow: 
+                2px 2px 0px rgba(92, 64, 51, 0.2),
+                0 0 20px rgba(214, 125, 62, 0.3);
+            border: 2px solid #D67D3E;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            backdrop-filter: blur(5px);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .carousel-control {
+                width: 48px;
+                height: 48px;
+            }
+            
+            .carousel-control.prev {
+                left: 10px;
+            }
+            
+            .carousel-control.next {
+                right: 10px;
+            }
+            
+            .memory-card:hover {
+                transform: translateY(-5px);
+            }
+        }
+        
+        /* 视频封面效果 */
+        .video-cover {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(214, 125, 62, 0.1), rgba(143, 188, 143, 0.1));
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .play-icon:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: white;
+        }
+        
+        .play-icon i {
+            color: #D67D3E;
+            font-size: 24px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body class="paper-texture relative overflow-x-hidden">
+    <!-- 背景装饰元素 -->
+    <div class="floating-ornament top-10 left-5 text-6xl text-vintage-terracotta animate-float">
+        <i class="fa fa-heart"></i>
+    </div>
+    <div class="floating-ornament top-20 right-10 text-5xl text-vintage-sage animate-float" style="animation-delay: 1s;">
+        <i class="fa fa-leaf"></i>
+    </div>
+    <div class="floating-ornament bottom-20 left-10 text-4xl text-vintage-gold animate-float" style="animation-delay: 2s;">
+        <i class="fa fa-star"></i>
+    </div>
+    <div class="floating-ornament bottom-32 right-20 text-3xl text-vintage-copper animate-float" style="animation-delay: 3s;">
+        <i class="fa fa-book"></i>
+    </div>
+
+    <!-- 飘落花瓣效果 -->
+    <div id="petal-container" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- 头部区域 -->
+    <header class="relative py-16 md:py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-vintage-terracotta/5 via-vintage-sage/5 to-vintage-gold/5"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- 主标题 -->
+                <h1 class="text-5xl md:text-7xl font-serif font-bold mb-8 animate-fade-in-up vintage-title">
+                    <span class="bg-gradient-to-r from-vintage-terracotta via-vintage-copper to-vintage-gold bg-clip-text text-transparent animate-text-glow">
+                        刘淑容奶奶
+                    </span>
+                </h1>
+                
+                <!-- 副标题 -->
+                <div class="inline-block px-8 py-4 rounded-full bg-white/80 backdrop-blur-md shadow-xl border border-white/30 mb-8 animate-slide-up">
+                    <p class="text-xl font-medium text-vintage-deepbrown">
+                        <i class="fa fa-heart text-vintage-rose mr-3 animate-pulse-gentle"></i>
+                        1924 - 2025 · 永恒的思念
+                        <i class="fa fa-heart text-vintage-rose ml-3 animate-pulse-gentle"></i>
+                    </p>
+                </div>
+                
+                <!-- 分隔线 -->
+                <div class="relative h-px bg-gradient-to-r from-transparent via-vintage-terracotta/30 to-transparent my-12">
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="seal-effect text-lg">珍爱永存</div>
+                    </div>
+                </div>
+                
+                <!-- 引言 -->
+                <div class="max-w-2xl mx-auto animate-zoom-in">
+                    <p class="text-lg text-vintage-deepbrown/80 italic font-serif leading-relaxed">
+                        "爱是永不消逝的记忆，您的笑容永远温暖着我们的心田。<br>
+                        时光流转，思念如歌，这份深情将伴随我们直到永远。"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="pb-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+                
+                <!-- 时光印记 - 图片轮播 -->
+                <div class="lg:col-span-4 animate-slide-in-left">
+                    <div class="memory-card h-full">
+                        <div class="p-6 relative">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-1 bg-gradient-to-r from-vintage-terracotta to-vintage-gold rounded-full mr-4"></div>
+                                <h2 class="text-2xl font-serif font-bold text-vintage-deepbrown flex items-center">
+                                    <i class="fa fa-camera-retro text-vintage-terracotta mr-3"></i>
+                                    时光印记
+                                </h2>
+                            </div>
+                            <p class="text-vintage-deepbrown/60 text-sm pl-16 mb-2">那些珍贵的瞬间，永远定格在心中</p>
+                        </div>
+                        
+                        <div class="carousel-wrapper h-[420px] md:h-[500px] mx-4 mb-6" id="imageCarousel">
+                            <div class="loader" id="imageLoader">
+                                <div class="spinner"></div>
+                                <p class="text-vintage-deepbrown/60 mt-4 text-sm">正在加载珍贵回忆...</p>
+                            </div>
+                            <!-- 图片内容由JS动态生成 -->
+                        </div>
+                        
+                        <div class="p-4 flex justify-center items-center space-x-3">
+                            <!-- 指示器动态生成 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 温情话语 - 文字轮播 -->
+                <div class="lg:col-span-4 animate-fade-in-up">
+                    <div class="memory-card h-full">
+                        <div class="p-6 relative">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-1 bg-gradient-to-r from-vintage-sage to-vintage-copper rounded-full mr-4"></div>
+                                <h2 class="text-2xl font-serif font-bold text-vintage-deepbrown flex items-center">
+                                    <i class="fa fa-pen-fancy text-vintage-sage mr-3"></i>
+                                    温情话语
+                                </h2>
+                            </div>
+                            <p class="text-vintage-deepbrown/60 text-sm pl-16 mb-2">字里行间，都是爱的温度</p>
+                        </div>
+                        
+                        <div class="text-content h-[420px] md:h-[500px] mx-4 mb-6 overflow-hidden" id="textCarousel">
+                            <div class="loader" id="textLoader">
+                                <div class="spinner"></div>
+                                <p class="text-vintage-deepbrown/60 mt-4 text-sm">正在读取思念的文字...</p>
+                            </div>
+                            <!-- 文本内容由JS动态生成 -->
+                        </div>
+                        
+                        <div class="p-4 flex justify-center items-center space-x-3">
+                            <!-- 指示器动态生成 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 岁月回响 - 视频轮播 -->
+                <div class="lg:col-span-4 animate-slide-in-right">
+                    <div class="memory-card h-full">
+                        <div class="p-6 relative">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-1 bg-gradient-to-r from-vintage-copper to-vintage-terracotta rounded-full mr-4"></div>
+                                <h2 class="text-2xl font-serif font-bold text-vintage-deepbrown flex items-center">
+                                    <i class="fa fa-film text-vintage-copper mr-3"></i>
+                                    岁月回响
+                                </h2>
+                            </div>
+                            <p class="text-vintage-deepbrown/60 text-sm pl-16 mb-2">流动的时光，永恒的记忆</p>
+                        </div>
+                        
+                        <div class="carousel-wrapper h-[420px] md:h-[500px] mx-4 mb-6 video-cover" id="videoCarousel">
+                            <div class="loader" id="videoLoader">
+                                <div class="spinner"></div>
+                                <p class="text-vintage-deepbrown/60 mt-4 text-sm">正在准备珍贵影像...</p>
+                            </div>
+                            <!-- 视频内容由JS动态生成 -->
+                        </div>
+                        
+                        <div class="p-4 flex justify-center items-center space-x-3">
+                            <!-- 指示器动态生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 时间轴装饰 -->
+            <div class="max-w-4xl mx-auto my-16">
+                <div class="relative h-px bg-gradient-to-r from-vintage-terracotta/20 via-vintage-sage/20 to-vintage-gold/20">
+                    <div class="absolute top-1/2 left-0 w-4 h-4 bg-vintage-terracotta rounded-full transform -translate-y-1/2"></div>
+                    <div class="absolute top-1/2 left-1/3 w-4 h-4 bg-vintage-sage rounded-full transform -translate-y-1/2"></div>
+                    <div class="absolute top-1/2 left-2/3 w-4 h-4 bg-vintage-gold rounded-full transform -translate-y-1/2"></div>
+                    <div class="absolute top-1/2 right-0 w-4 h-4 bg-vintage-copper rounded-full transform -translate-y-1/2"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="py-16 bg-gradient-to-b from-white/50 to-vintage-cream/50 relative">
+        <div class="absolute inset-0 bg-vintage-paper opacity-10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white/80 backdrop-blur-md rounded-3xl p-8 md:p-12 text-center shadow-2xl border border-white/40">
+                    <!-- 纪念图标 -->
+                    <div class="w-24 h-24 mx-auto mb-8 rounded-full bg-gradient-to-br from-vintage-terracotta/20 via-vintage-sage/20 to-vintage-gold/20 flex items-center justify-center animate-float">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-vintage-terracotta/30 to-vintage-gold/30 flex items-center justify-center">
+                            <i class="fa fa-heart text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- 纪念文字 -->
+                    <h3 class="text-3xl font-serif font-bold text-vintage-deepbrown mb-6 animate-text-glow">
+                        爱是永不消逝的记忆
+                    </h3>
+                    
+                    <div class="max-w-md mx-auto">
+                        <p class="text-lg text-vintage-deepbrown/80 mb-8 leading-relaxed font-serif">
+                            2025年，您91岁的容颜<br>
+                            永远铭刻在我们心中<br>
+                            时光流转，爱意永恒
+                        </p>
+                    </div>
+                    
+                    <!-- 纪念花环 -->
+                    <div class="flex justify-center space-x-6 mb-10">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-vintage-terracotta/10 to-transparent border border-vintage-terracotta/20 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                            <i class="fa fa-leaf text-vintage-terracotta text-xl"></i>
+                        </div>
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-vintage-sage/10 to-transparent border border-vintage-sage/20 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                            <i class="fa fa-star text-vintage-sage text-xl"></i>
+                        </div>
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-vintage-gold/10 to-transparent border border-vintage-gold/20 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                            <i class="fa fa-heart text-vintage-gold text-xl"></i>
+                        </div>
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-vintage-copper/10 to-transparent border border-vintage-copper/20 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                            <i class="fa fa-book text-vintage-copper text-xl"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- 版权信息 -->
+                    <div class="pt-8 border-t border-vintage-deepbrown/10">
+                        <p class="text-vintage-deepbrown/60 text-sm">
+                            <i class="fa fa-copyright mr-2"></i>
+                            永恒的思念 · 致敬我们最爱的奶奶刘淑容
+                        </p>
+                        <p class="text-vintage-deepbrown/40 text-xs mt-2">
+                            愿时光温柔，思念永存
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-vintage-terracotta to-vintage-copper rounded-full flex items-center justify-center text-white shadow-2xl z-50 opacity-0 transition-all duration-300 hover:scale-110">
+        <i class="fa fa-chevron-up text-lg"></i>
+    </button>
+
+    <script>
+        // 配置文件路径
+        const FILES = {
+            pictures: [
+                'pictures/1.jpg',
+                'pictures/2.jpg',
+                'pictures/8.jpg',
+                'pictures/9.jpg',
+                'pictures/3.jpg',
+                'pictures/5.jpg',
+                'pictures/6.jpg',
+                'pictures/7.jpg',
+                'pictures/4.jpg',
+                'pictures/10.jpg',
+                'pictures/11.jpg',
+                'pictures/12.jpg',
+                'pictures/13.jpg',
+                'pictures/14.jpg',
+                'pictures/15.jpg',
+            ],
+            texts: [
+                'texts/1.txt',
+                'texts/3.txt',
+                'texts/5.txt',
+                'texts/2.txt',
+                'texts/4.txt',
+                'texts/6.txt',
+            ],
+            videos: [
+                'videos/1.mp4',
+                'videos/2.mp4',
+                'videos/3.mp4',
+                'videos/4.mp4',
+                'videos/5.mp4',
+                'videos/6.mp4',
+                'videos/7.mp4',
+                'videos/8.mp4',
+            ]
+        };
+
+        // 创建花瓣飘落效果
+        function createPetalEffect() {
+            const container = document.getElementById('petal-container');
+            if (!container) return;
+            
+            const petalCount = 15;
+            const petals = ['🌸', '🍂', '❀', '✿', '❁'];
+            
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'absolute text-2xl opacity-20 animate-float';
+                petal.style.left = `${Math.random() * 100}%`;
+                petal.style.top = `${Math.random() * 100}%`;
+                petal.style.fontSize = `${Math.random() * 20 + 16}px`;
+                petal.style.animationDelay = `${Math.random() * 5}s`;
+                petal.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                petal.textContent = petals[Math.floor(Math.random() * petals.length)];
+                container.appendChild(petal);
+            }
+        }
+
+        // 创建加载动画
+        function createLoadingAnimation(container, message) {
+            const loader = document.createElement('div');
+            loader.className = 'loader';
+            loader.innerHTML = `
+                <div class="spinner"></div>
+                <p class="text-vintage-deepbrown/60 mt-4 text-sm">${message}</p>
+            `;
+            container.appendChild(loader);
+            return loader;
+        }
+
+        // 加载TXT文件
+        async function loadTextFile(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                const text = await response.text();
+                return text;
+            } catch (error) {
+                console.error(`加载文件失败: ${url}`, error);
+                return null;
+            }
+        }
+
+        // 解析TXT内容
+        function parseTextContent(content) {
+            if (!content) {
+                return {
+                    title: '思念',
+                    content: '这些珍贵的文字暂时无法加载，但思念永存心间。',
+                    author: 'candy'
+                };
+            }
+            
+            const lines = content.split('\n').filter(line => line.trim().length > 0);
+            
+            if (lines.length === 0) {
+                return {
+                    title: '思念',
+                    content: content,
+                    author: 'candy'
+                };
+            }
+            
+            // 第一行为标题
+            const title = lines[0].trim();
+            
+            // 最后一行可能为作者
+            let author = 'candy';
+            let contentLines = lines.slice(1);
+            
+            if (contentLines.length > 0) {
+                // 检查最后一行是否可能是作者（较短的行）
+                const lastLine = contentLines[contentLines.length - 1].trim();
+                if (lastLine.length < 30 && !lastLine.includes('。') && !lastLine.includes('！') && !lastLine.includes('？')) {
+                    author = lastLine;
+                    contentLines = contentLines.slice(0, -1);
+                }
+            }
+            
+            // 剩余内容为主体
+            const mainContent = contentLines.join('\n');
+            
+            return {
+                title: title,
+                content: mainContent || '这里是对奶奶的思念...',
+                author: author
+            };
+        }
+
+        // 创建轮播系统
+        class AdvancedCarousel {
+            constructor(type, containerId, files) {
+                this.type = type;
+                this.container = document.getElementById(containerId);
+                this.indicatorsContainer = this.container?.parentElement?.querySelector('.p-4');
+                this.files = files;
+                this.items = [];
+                this.currentIndex = 0;
+                this.interval = null;
+                this.autoPlayInterval = this.getAutoPlayInterval();
+            }
+
+            getAutoPlayInterval() {
+                switch(this.type) {
+                    case 'pictures': return 5000;
+                    case 'texts': return 8000;
+                    case 'videos': return 12000;
+                    default: return 5000;
+                }
+            }
+
+            async init() {
+                try {
+                    await this.loadContent();
+                    this.render();
+                    this.startAutoPlay();
+                    this.hideLoader();
+                } catch (error) {
+                    console.error(`${this.type}轮播初始化失败:`, error);
+                    this.showError();
+                }
+            }
+
+            async loadContent() {
+                switch(this.type) {
+                    case 'pictures':
+                        this.items = this.files.map(url => ({
+                            type: 'image',
+                            url: url,
+                            title: `回忆照片 ${this.files.indexOf(url) + 1}`
+                        }));
+                        break;
+                    case 'texts':
+                        this.items = await this.loadTexts();
+                        break;
+                    case 'videos':
+                        this.items = this.files.map(url => ({
+                            type: 'video',
+                            url: url,
+                            title: `珍贵影像 ${this.files.indexOf(url) + 1}`
+                        }));
+                        break;
+                }
+            }
+
+            async loadTexts() {
+                const textItems = [];
+                
+                for (const filePath of this.files) {
+                    try {
+                        const textContent = await loadTextFile(filePath);
+                        const parsedContent = parseTextContent(textContent);
+                        
+                        textItems.push({
+                            type: 'text',
+                            title: parsedContent.title,
+                            content: parsedContent.content,
+                            author: parsedContent.author,
+                            filePath: filePath
+                        });
+                        
+                    } catch (error) {
+                        console.error(`处理文本失败: ${filePath}`, error);
+                        textItems.push({
+                            type: 'text',
+                            title: '思念',
+                            content: '虽然无法读取原始文件，但对奶奶的思念永远在心中。她的笑容、她的教诲、她的爱，都已成为我们生命中最宝贵的记忆。',
+                            author: 'candy',
+                            isFallback: true
+                        });
+                    }
+                }
+                
+                return textItems;
+            }
+
+            render() {
+                if (!this.container || this.items.length === 0) return;
+
+                // 清空容器
+                this.container.innerHTML = '';
+                
+                // 创建轮播项
+                this.items.forEach((item, index) => {
+                    const slide = this.createSlide(item, index);
+                    this.container.appendChild(slide);
+                });
+
+                // 创建控制按钮
+                if (this.items.length > 1) {
+                    this.createControls();
+                }
+                
+                // 创建指示器
+                if (this.items.length > 1 && this.indicatorsContainer) {
+                    this.createIndicators();
+                }
+
+                // 显示第一项
+                this.showSlide(0);
+            }
+
+            createSlide(item, index) {
+                const slide = document.createElement('div');
+                slide.className = `carousel-slide ${this.type}-slide`;
+                slide.dataset.index = index;
+
+                if (item.type === 'image') {
+                    const imgWrapper = document.createElement('div');
+                    imgWrapper.className = 'relative w-full h-full';
+                    
+                    const img = document.createElement('img');
+                    img.src = item.url;
+                    img.alt = item.title;
+                    img.className = 'w-full h-full object-cover';
+                    img.loading = 'lazy';
+                    
+                    // 图片加载失败处理
+                    img.onerror = () => {
+                        console.warn(`图片加载失败: ${item.url}`);
+                        img.src = `https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80&blur=50`;
+                        img.alt = '备用图片';
+                    };
+                    
+                    // 图片描述
+                    const caption = document.createElement('div');
+                    caption.className = 'absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4';
+                    caption.innerHTML = `
+                        <p class="text-white text-sm">${item.title}</p>
+                    `;
+                    
+                    imgWrapper.appendChild(img);
+                    imgWrapper.appendChild(caption);
+                    slide.appendChild(imgWrapper);
+                } 
+                else if (item.type === 'text') {
+                    const textWrapper = document.createElement('div');
+                    textWrapper.className = 'h-full p-6 text-scroll overflow-y-auto';
+                    
+                    // 标题
+                    const title = document.createElement('h3');
+                    title.className = 'text-2xl font-serif font-bold text-vintage-deepbrown mb-6 text-center';
+                    title.innerHTML = `
+                        <div class="inline-block px-6 py-2 bg-gradient-to-r from-vintage-terracotta/10 to-vintage-sage/10 rounded-lg border border-vintage-terracotta/20">
+                            ${item.title}
+                        </div>
+                    `;
+                    
+                    // 内容
+                    const content = document.createElement('div');
+                    content.className = 'text-vintage-deepbrown/80 text-lg leading-relaxed font-serif mb-8';
+                    content.innerHTML = item.content.replace(/\n/g, '<br><br>');
+                    
+                    // 作者
+                    const author = document.createElement('div');
+                    author.className = 'text-right italic text-vintage-copper mt-8 pt-4 border-t border-vintage-terracotta/20';
+                    author.innerHTML = `
+                        <div class="flex items-center justify-end">
+                            <i class="fa fa-feather-alt mr-2"></i>
+                            <span>—— ${item.author}</span>
+                        </div>
+                    `;
+                    
+                    // 文件来源（调试用）
+                    if (item.isFallback) {
+                        const source = document.createElement('p');
+                        source.className = 'text-xs text-vintage-deepbrown/40 mt-2 text-center';
+                        source.textContent = '（系统默认内容）';
+                        textWrapper.appendChild(source);
+                    }
+                    
+                    textWrapper.appendChild(title);
+                    textWrapper.appendChild(content);
+                    textWrapper.appendChild(author);
+                    slide.appendChild(textWrapper);
+                }
+                else if (item.type === 'video') {
+                    const videoWrapper = document.createElement('div');
+                    videoWrapper.className = 'relative w-full h-full';
+                    
+                    const video = document.createElement('video');
+                    video.className = 'w-full h-full object-cover';
+                    video.muted = true;
+                    video.loop = true;
+                    video.playsInline = true;
+                    video.preload = 'metadata';
+                    video.poster = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"%3E%3Crect width="800" height="600" fill="%235C4033"/%3E%3Ctext x="400" y="300" font-family="Arial" font-size="20" fill="white" text-anchor="middle" dominant-baseline="middle"%3E加载中...%3C/text%3E%3C/svg%3E';
+                    
+                    const source = document.createElement('source');
+                    source.src = item.url;
+                    source.type = 'video/mp4';
+                    
+                    video.appendChild(source);
+                    videoWrapper.appendChild(video);
+                    
+                    // 添加播放按钮
+                    const playBtn = document.createElement('div');
+                    playBtn.className = 'play-icon';
+                    playBtn.innerHTML = '<i class="fa fa-play"></i>';
+                    playBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        if (video.paused) {
+                            video.play();
+                            playBtn.innerHTML = '<i class="fa fa-pause"></i>';
+                        } else {
+                            video.pause();
+                            playBtn.innerHTML = '<i class="fa fa-play"></i>';
+                        }
+                    });
+                    
+                    videoWrapper.appendChild(playBtn);
+                    
+                    // 点击视频控制播放
+                    videoWrapper.addEventListener('click', (e) => {
+                        if (e.target === videoWrapper || e.target === video) {
+                            if (video.paused) {
+                                video.play();
+                                playBtn.innerHTML = '<i class="fa fa-pause"></i>';
+                            } else {
+                                video.pause();
+                                playBtn.innerHTML = '<i class="fa fa-play"></i>';
+                            }
+                        }
+                    });
+                    
+                    slide.appendChild(videoWrapper);
+                }
+
+                return slide;
+            }
+
+            createControls() {
+                const prevBtn = document.createElement('div');
+                prevBtn.className = 'carousel-control prev';
+                prevBtn.innerHTML = '<i class="fa fa-chevron-left"></i>';
+                prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.prevSlide();
+                });
+                
+                const nextBtn = document.createElement('div');
+                nextBtn.className = 'carousel-control next';
+                nextBtn.innerHTML = '<i class="fa fa-chevron-right"></i>';
+                nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.nextSlide();
+                });
+                
+                this.container.appendChild(prevBtn);
+                this.container.appendChild(nextBtn);
+            }
+
+            createIndicators() {
+                if (!this.indicatorsContainer) return;
+                
+                this.indicatorsContainer.innerHTML = '';
+                
+                this.items.forEach((_, index) => {
+                    const indicator = document.createElement('div');
+                    indicator.className = `carousel-indicator ${index === 0 ? 'active' : ''}`;
+                    indicator.addEventListener('click', () => this.showSlide(index));
+                    this.indicatorsContainer.appendChild(indicator);
+                });
+            }
+
+            showSlide(index) {
+                if (this.items.length === 0) return;
+                
+                const slides = this.container.querySelectorAll(`.carousel-slide`);
+                if (!slides[index]) return;
+                
+                // 隐藏当前幻灯片
+                slides.forEach(slide => slide.classList.remove('active'));
+                
+                // 如果是视频，暂停当前视频
+                if (this.type === 'videos') {
+                    const currentVideo = this.container.querySelector('.carousel-slide.active video');
+                    if (currentVideo) {
+                        currentVideo.pause();
+                        const playBtn = currentVideo.parentElement.querySelector('.play-icon');
+                        if (playBtn) playBtn.innerHTML = '<i class="fa fa-play"></i>';
+                    }
+                }
+                
+                // 显示新幻灯片
+                this.currentIndex = index;
+                slides[index].classList.add('active');
+                
+                // 如果是视频，显示播放按钮
+                if (this.type === 'videos') {
+                    const video = slides[index].querySelector('video');
+                    if (video) {
+                        // 自动播放第一个视频
+                        if (index === 0) {
+                            video.play().catch(e => console.log('视频自动播放失败:', e));
+                            const playBtn = video.parentElement.querySelector('.play-icon');
+                            if (playBtn) playBtn.innerHTML = '<i class="fa fa-pause"></i>';
+                        }
+                    }
+                }
+                
+                // 更新指示器
+                if (this.indicatorsContainer) {
+                    const indicators = this.indicatorsContainer.querySelectorAll('.carousel-indicator');
+                    indicators.forEach((indicator, i) => {
+                        indicator.classList.toggle('active', i === index);
+                    });
+                }
+            }
+
+            nextSlide() {
+                if (this.items.length === 0) return;
+                const nextIndex = (this.currentIndex + 1) % this.items.length;
+                this.showSlide(nextIndex);
+            }
+
+            prevSlide() {
+                if (this.items.length === 0) return;
+                const prevIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
+                this.showSlide(prevIndex);
+            }
+
+            startAutoPlay() {
+                if (this.items.length <= 1) return;
+                
+                this.stopAutoPlay();
+                this.interval = setInterval(() => this.nextSlide(), this.autoPlayInterval);
+                
+                // 鼠标悬停暂停
+                this.container.addEventListener('mouseenter', () => this.stopAutoPlay());
+                this.container.addEventListener('mouseleave', () => this.startAutoPlay());
+            }
+
+            stopAutoPlay() {
+                if (this.interval) {
+                    clearInterval(this.interval);
+                    this.interval = null;
+                }
+            }
+
+            hideLoader() {
+                const loader = document.getElementById(`${this.type}Loader`);
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 300);
+                }
+            }
+
+            showError() {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'absolute inset-0 flex items-center justify-center bg-gradient-to-br from-vintage-cream/90 to-vintage-parchment/90 z-10 rounded-2xl';
+                errorDiv.innerHTML = `
+                    <div class="text-center p-8">
+                        <i class="fa fa-exclamation-circle text-vintage-terracotta text-4xl mb-4"></i>
+                        <p class="text-vintage-deepbrown/80 font-medium">内容加载失败</p>
+                        <p class="text-vintage-deepbrown/60 text-sm mt-2 max-w-xs">请检查文件路径或刷新页面</p>
+                    </div>
+                `;
+                this.container.appendChild(errorDiv);
+                
+                this.hideLoader();
+            }
+        }
+
+        // 返回顶部功能
+        function setupBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+            if (!backToTopBtn) return;
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.style.opacity = '1';
+                    backToTopBtn.style.transform = 'translateY(0)';
+                } else {
+                    backToTopBtn.style.opacity = '0';
+                    backToTopBtn.style.transform = 'translateY(20px)';
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // 显示加载提示
+        function showLoadingToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed top-8 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md rounded-full px-6 py-3 shadow-2xl border border-white/40 z-50 animate-fade-in-up';
+            toast.innerHTML = `
+                <div class="flex items-center">
+                    <div class="w-3 h-3 rounded-full bg-gradient-to-r from-vintage-terracotta to-vintage-sage animate-pulse mr-3"></div>
+                    <span class="text-vintage-deepbrown font-medium">${message}</span>
+                </div>
+            `;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translate(-50%, -20px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+
+        // 主初始化函数
+        document.addEventListener('DOMContentLoaded', async () => {
+            // 创建花瓣效果
+            createPetalEffect();
+            
+            // 设置返回顶部按钮
+            setupBackToTop();
+            
+            // 显示初始加载提示
+            showLoadingToast('正在加载思念的回忆...');
+            
+            try {
+                // 并行初始化三个轮播
+                const imageCarousel = new AdvancedCarousel('pictures', 'imageCarousel', FILES.pictures);
+                const textCarousel = new AdvancedCarousel('texts', 'textCarousel', FILES.texts);
+                const videoCarousel = new AdvancedCarousel('videos', 'videoCarousel', FILES.videos);
+                
+                await Promise.allSettled([
+                    imageCarousel.init(),
+                    textCarousel.init(),
+                    videoCarousel.init()
+                ]);
+                
+                // 显示完成提示
+                setTimeout(() => {
+                    showLoadingToast('回忆加载完成，思念永存 ❤️');
+                }, 1000);
+                
+            } catch (error) {
+                console.error('网站初始化失败:', error);
+                
+                // 显示错误提示
+                const errorToast = document.createElement('div');
+                errorToast.className = 'fixed top-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-red-50 to-orange-50 backdrop-blur-md rounded-full px-6 py-3 shadow-2xl border border-red-200 z-50 animate-fade-in-up';
+                errorToast.innerHTML = `
+                    <div class="flex items-center">
+                        <i class="fa fa-exclamation-triangle text-red-500 mr-3"></i>
+                        <span class="text-red-800 font-medium">部分内容加载失败</span>
+                    </div>
+                `;
+                document.body.appendChild(errorToast);
+                
+                setTimeout(() => {
+                    errorToast.style.opacity = '0';
+                    errorToast.style.transform = 'translate(-50%, -20px)';
+                    setTimeout(() => errorToast.remove(), 300);
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
