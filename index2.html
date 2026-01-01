@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奶奶</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FEFAF6',
+                        warmGray: '#EDE9E4',
+                        terracotta: '#DBA979',
+                        sage: '#A8B8A5',
+                        deepBrown: '#5C4B3A',
+                        softPink: '#F5E8E0',
+                        vintageRed: '#B85C5C'
+                    },
+                    fontFamily: {
+                        serif: ['Noto Serif SC', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'gentle-pulse': 'gentlePulse 3s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            @keyframes slideUp {
+                from { 
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to { 
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes gentlePulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.8; }
+            }
+            
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+            
+            .carousel-container {
+                @apply relative overflow-hidden rounded-2xl shadow-xl;
+            }
+            .carousel-item {
+                @apply absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out;
+            }
+            .carousel-item.active {
+                @apply opacity-100 z-10;
+            }
+            .carousel-control {
+                @apply absolute top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-deepBrown w-12 h-12 rounded-full flex items-center justify-center z-20 transition-all duration-300 cursor-pointer shadow-lg backdrop-blur-sm;
+            }
+            .carousel-control:hover {
+                @apply scale-110 bg-white;
+            }
+            .text-container {
+                @apply relative h-full bg-gradient-to-br from-cream to-warmGray p-8 rounded-2xl shadow-xl overflow-hidden border border-white/50;
+            }
+            .text-item {
+                @apply absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out flex flex-col justify-center px-4;
+            }
+            .text-item.active {
+                @apply opacity-100 z-10;
+            }
+            .video-container {
+                @apply relative h-full rounded-2xl shadow-xl overflow-hidden bg-gradient-to-br from-sage/20 to-cream/50 border border-white/50;
+            }
+            .video-item {
+                @apply absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out;
+            }
+            .video-item.active {
+                @apply opacity-100 z-10;
+            }
+            .loader {
+                @apply absolute inset-0 flex items-center justify-center bg-white/80 z-30 backdrop-blur-sm;
+            }
+            .spinner {
+                @apply w-12 h-12 border-4 border-terracotta border-t-transparent rounded-full animate-spin;
+            }
+            .ornament {
+                @apply absolute pointer-events-none opacity-20;
+            }
+            .indicator {
+                @apply w-3 h-3 rounded-full transition-all duration-300 cursor-pointer border border-deepBrown/20;
+            }
+            .indicator.active {
+                @apply bg-terracotta border-terracotta;
+            }
+            .glow-text {
+                text-shadow: 0 2px 4px rgba(92, 75, 58, 0.2);
+            }
+            .vintage-border {
+                border-image: linear-gradient(45deg, #DBA979, #A8B8A5) 1;
+            }
+            .paper-texture {
+                background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.1'/%3E%3C/svg%3E");
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-cream to-warmGray min-h-screen font-sans paper-texture">
+    <!-- 装饰元素 -->
+    <div class="ornament top-10 left-10 w-20 h-20 text-terracotta animate-float">
+        <i class="fa fa-heart text-4xl"></i>
+    </div>
+    <div class="ornament bottom-10 right-10 w-16 h-16 text-sage animate-float" style="animation-delay: 1s;">
+        <i class="fa fa-leaf text-3xl"></i>
+    </div>
+    <div class="ornament top-1/3 right-20 w-12 h-12 text-deepBrown/30 animate-float" style="animation-delay: 2s;">
+        <i class="fa fa-star text-2xl"></i>
+    </div>
+
+    <header class="relative py-12 px-4 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-terracotta/10 to-sage/10"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-serif font-bold mb-6 text-deepBrown animate-slide-up glow-text">
+                <span class="bg-gradient-to-r from-terracotta to-vintageRed bg-clip-text text-transparent">
+                    和奶奶的回忆瞬间
+                </span>
+            </h1>
+            <div class="inline-block px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg">
+                <p class="text-lg font-medium text-deepBrown animate-fade-in">
+                    <i class="fa fa-heart text-terracotta mr-2"></i>
+                    永远爱您——刘淑容女士
+                    <i class="fa fa-heart text-terracotta ml-2"></i>
+                </p>
+            </div>
+            <div class="mt-8 flex justify-center space-x-4">
+                <div class="w-16 h-1 bg-terracotta rounded-full"></div>
+                <div class="w-8 h-1 bg-sage rounded-full"></div>
+                <div class="w-16 h-1 bg-terracotta rounded-full"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- 左侧图片轮播 -->
+            <div class="lg:col-span-4 animate-slide-up" style="animation-delay: 0.1s;">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl backdrop-blur-sm border border-white/70">
+                    <div class="relative">
+                        <h2 class="bg-gradient-to-r from-terracotta to-terracotta/80 text-white text-center py-4 font-serif font-semibold text-xl relative overflow-hidden">
+                            <div class="absolute inset-0 bg-white/10"></div>
+                            <span class="relative z-10 flex items-center justify-center">
+                                <i class="fa fa-camera mr-3"></i>
+                                朝花夕拾
+                                <i class="fa fa-photo ml-3"></i>
+                            </span>
+                        </h2>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                            <i class="fa fa-image text-white"></i>
+                        </div>
+                    </div>
+                    <div class="carousel-container h-[400px] md:h-[500px]">
+                        <div class="loader" id="imageLoader">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center space-x-3 p-4 bg-gradient-to-r from-white to-warmGray/50">
+                        <!-- 图片指示器 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 中间文字轮播 -->
+            <div class="lg:col-span-4 animate-slide-up" style="animation-delay: 0.2s;">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl backdrop-blur-sm border border-white/70">
+                    <div class="relative">
+                        <h2 class="bg-gradient-to-r from-sage to-sage/80 text-white text-center py-4 font-serif font-semibold text-xl relative overflow-hidden">
+                            <div class="absolute inset-0 bg-white/10"></div>
+                            <span class="relative z-10 flex items-center justify-center">
+                                <i class="fa fa-pencil mr-3"></i>
+                                心有所念
+                                <i class="fa fa-book ml-3"></i>
+                            </span>
+                        </h2>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                            <i class="fa fa-quote-right text-white"></i>
+                        </div>
+                    </div>
+                    <div class="text-container h-[400px] md:h-[500px]">
+                        <div class="loader" id="textLoader">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center space-x-3 p-4 bg-gradient-to-r from-white to-warmGray/50">
+                        <!-- 文字指示器 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧视频轮播 -->
+            <div class="lg:col-span-4 animate-slide-up" style="animation-delay: 0.3s;">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl backdrop-blur-sm border border-white/70">
+                    <div class="relative">
+                        <h2 class="bg-gradient-to-r from-deepBrown to-deepBrown/80 text-white text-center py-4 font-serif font-semibold text-xl relative overflow-hidden">
+                            <div class="absolute inset-0 bg-white/10"></div>
+                            <span class="relative z-10 flex items-center justify-center">
+                                <i class="fa fa-film mr-3"></i>
+                                追忆往昔
+                                <i class="fa fa-play-circle ml-3"></i>
+                            </span>
+                        </h2>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                            <i class="fa fa-video-camera text-white"></i>
+                        </div>
+                    </div>
+                    <div class="video-container h-[400px] md:h-[500px]">
+                        <div class="loader" id="videoLoader">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center space-x-3 p-4 bg-gradient-to-r from-white to-warmGray/50">
+                        <!-- 视频指示器 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="relative py-12 mt-12 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-terracotta/5 to-sage/5"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <div class="inline-block px-8 py-4 bg-white/60 backdrop-blur-sm rounded-2xl shadow-lg">
+                <p class="text-lg font-medium text-deepBrown mb-2">
+                    2025年，91岁的奶奶是我们永远的最爱！
+                </p>
+                <p class="text-sm text-deepBrown/70">
+                    <i class="fa fa-clock-o mr-2"></i>
+                    时光如水，思念如歌
+                </p>
+            </div>
+            <div class="mt-8 flex justify-center space-x-6">
+                <div class="w-32 h-1 bg-gradient-to-r from-terracotta/0 via-terracotta to-terracotta/0 rounded-full"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 配置参数（保持不变）
+        const CONFIG = {
+            carouselIntervals: {
+                pictures: 4000,
+                texts: 3000,
+                videos: 15000
+            },
+            textStyles: {
+                titleColor: '#5C4B3A',
+                contentColor: '#5C4B3A',
+                authorColor: '#DBA979',
+                titleSize: '2xl',
+                contentSize: 'lg',
+                lineHeight: 'leading-relaxed'
+            },
+            videoFallback: {
+                usePictureIfEmpty: true,
+                fallbackIndex: 0
+            },
+            textParsing: {
+                firstLineAsTitle: true,
+                lastLineAsAuthor: true
+            }
+        };
+
+        // 固定文件路径（保持不变）
+        const FILES = {
+            pictures: [
+                'pictures/1.jpg',
+                'pictures/2.jpg',
+                'pictures/8.jpg',
+                'pictures/9.jpg',
+                'pictures/3.jpg',
+                'pictures/5.jpg',
+                'pictures/6.jpg',
+                'pictures/7.jpg',
+                'pictures/4.jpg',
+                'pictures/10.jpg',
+                'pictures/11.jpg',
+                'pictures/12.jpg',
+                'pictures/13.jpg',
+                'pictures/14.jpg',
+                'pictures/15.jpg',
+            ],
+            texts: [
+                'texts/1.txt',
+                'texts/3.txt',
+                'texts/5.txt',
+                'texts/2.txt',
+                'texts/4.txt',
+                'texts/6.txt',
+            ],
+            videos: [
+                'videos/1.mp4',
+                'videos/2.mp4',
+                'videos/3.mp4',
+                'videos/4.mp4',
+                'videos/5.mp4',
+                'videos/6.mp4',
+                'videos/7.mp4',
+                'videos/8.mp4',
+            ]
+        };
+
+        // DOM 加载完成后执行
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const [pictures, texts, videos] = await Promise.all([
+                    loadPictures(),
+                    loadTexts(),
+                    loadVideos()
+                ]);
+                
+                initCarousel('图片', pictures);
+                initTextCarousel(texts);
+                initVideoCarousel(videos);
+                
+                document.getElementById('imageLoader').style.display = 'none';
+                document.getElementById('textLoader').style.display = 'none';
+                document.getElementById('videoLoader').style.display = 'none';
+                
+            } catch (error) {
+                console.error('加载资源失败:', error);
+                showErrorToast('加载资源失败，请刷新页面重试');
+            }
+        });
+
+        // 显示错误提示
+        function showErrorToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed top-4 right-4 bg-white/90 backdrop-blur-sm text-deepBrown px-6 py-3 rounded-xl shadow-lg z-50 animate-slide-up';
+            toast.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fa fa-exclamation-triangle text-vintageRed mr-3"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // 加载图片（保持不变）
+        async function loadPictures() {
+            return FILES.pictures.map(url => ({
+                url,
+                alt: url.split('/').pop()
+            }));
+        }
+
+        // 加载文本（保持不变）
+        async function loadTexts() {
+            const texts = [];
+            for (const path of FILES.texts) {
+                try {
+                    const response = await fetch(path);
+                    if (!response.ok) throw new Error(`Failed to fetch ${path}`);
+                    const content = await response.text();
+                    const lines = content.split('\n').filter(line => line.trim().length > 0);
+                    
+                    let title = path.split('/').pop().replace('.txt', '');
+                    let textContent = content;
+                    let author = '未知';
+                    
+                    if (lines.length > 0) {
+                        if (CONFIG.textParsing.firstLineAsTitle) {
+                            title = lines.shift().trim();
+                        }
+                        if (CONFIG.textParsing.lastLineAsAuthor && lines.length > 0) {
+                            author = lines.pop().trim();
+                        }
+                        textContent = lines.join('\n');
+                    }
+                    
+                    texts.push({
+                        title: title,
+                        content: textContent,
+                        author: author
+                    });
+                } catch (error) {
+                    console.error(`加载文本 ${path} 失败:`, error);
+                    texts.push({
+                        title: path.split('/').pop().replace('.txt', ''),
+                        content: `无法加载此文本内容`,
+                        author: 'candy'
+                    });
+                }
+            }
+            return texts;
+        }
+
+        // 加载视频（保持不变）
+        async function loadVideos() {
+            const videos = FILES.videos.map(url => ({
+                source: url,
+                title: url.split('/').pop()
+            }));
+            
+            if (videos.length === 0 && CONFIG.videoFallback.usePictureIfEmpty) {
+                const pictures = await loadPictures();
+                if (pictures.length > 0) {
+                    const fallbackIndex = Math.min(CONFIG.videoFallback.fallbackIndex, pictures.length - 1);
+                    return [{
+                        type: 'image',
+                        url: pictures[fallbackIndex].url,
+                        title: '无视频内容，显示图片替代'
+                    }];
+                }
+            }
+            return videos;
+        }
+
+        // 初始化图片轮播（优化样式）
+        function initCarousel(type, items) {
+            const container = document.querySelector('.carousel-container');
+            const indicatorsContainer = container.nextElementSibling;
+            
+            items.forEach((item, index) => {
+                const carouselItem = document.createElement('div');
+                carouselItem.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+                
+                const img = document.createElement('img');
+                img.src = item.url;
+                img.alt = item.alt;
+                img.className = 'w-full h-full object-cover transition-transform duration-700 hover:scale-105';
+                img.loading = 'lazy';
+                
+                img.onerror = () => {
+                    img.src = 'https://picsum.photos/800/600?grayscale';
+                    img.alt = `加载失败 - ${item.alt}`;
+                };
+                
+                carouselItem.appendChild(img);
+                container.appendChild(carouselItem);
+                
+                const indicator = document.createElement('button');
+                indicator.className = `indicator ${index === 0 ? 'active' : 'bg-white/50 hover:bg-white/80'}`;
+                indicator.setAttribute('aria-label', `${type} ${index + 1}`);
+                indicator.addEventListener('click', () => goToSlide(container, index));
+                indicatorsContainer.appendChild(indicator);
+            });
+            
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'carousel-control left-4';
+            prevBtn.innerHTML = '<i class="fa fa-chevron-left"></i>';
+            prevBtn.addEventListener('click', () => changeSlide(container, -1));
+            container.appendChild(prevBtn);
+            
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'carousel-control right-4';
+            nextBtn.innerHTML = '<i class="fa fa-chevron-right"></i>';
+            nextBtn.addEventListener('click', () => changeSlide(container, 1));
+            container.appendChild(nextBtn);
+            
+            let interval = setInterval(() => changeSlide(container, 1), CONFIG.carouselIntervals.pictures);
+            container.addEventListener('mouseenter', () => clearInterval(interval));
+            container.addEventListener('mouseleave', () => {
+                interval = setInterval(() => changeSlide(container, 1), CONFIG.carouselIntervals.pictures);
+            });
+        }
+
+        // 初始化文字轮播（优化样式）
+        function initTextCarousel(items) {
+            const container = document.querySelector('.text-container');
+            const indicatorsContainer = container.nextElementSibling;
+            
+            items.forEach((item, index) => {
+                const textItem = document.createElement('div');
+                textItem.className = `text-item ${index === 0 ? 'active' : ''}`;
+                
+                const title = document.createElement('h3');
+                title.className = `font-serif text-${CONFIG.textStyles.titleSize} font-bold mb-6 text-center`;
+                title.style.color = CONFIG.textStyles.titleColor;
+                title.innerHTML = `
+                    <div class="inline-block px-4 py-2 bg-terracotta/10 rounded-lg">
+                        ${item.title}
+                    </div>
+                `;
+                
+                const content = document.createElement('div');
+                content.className = `font-sans ${CONFIG.textStyles.contentSize} ${CONFIG.textStyles.lineHeight} text-center mb-8 px-2`;
+                content.style.color = CONFIG.textStyles.contentColor;
+                content.innerHTML = `
+                    <div class="bg-white/50 backdrop-blur-sm rounded-xl p-6 shadow-inner">
+                        ${item.content.replace(/\n/g, '<br>')}
+                    </div>
+                `;
+                
+                const author = document.createElement('p');
+                author.className = 'text-center italic font-serif opacity-90';
+                author.style.color = CONFIG.textStyles.authorColor;
+                author.innerHTML = `
+                    <span class="border-b border-terracotta/30 pb-1">
+                        — ${item.author}
+                    </span>
+                `;
+                
+                textItem.appendChild(title);
+                textItem.appendChild(content);
+                textItem.appendChild(author);
+                container.appendChild(textItem);
+                
+                const indicator = document.createElement('button');
+                indicator.className = `indicator ${index === 0 ? 'active' : 'bg-white/50 hover:bg-white/80'}`;
+                indicator.setAttribute('aria-label', `文字 ${index + 1}`);
+                indicator.addEventListener('click', () => goToTextSlide(index));
+                indicatorsContainer.appendChild(indicator);
+            });
+            
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'carousel-control left-4';
+            prevBtn.innerHTML = '<i class="fa fa-chevron-left"></i>';
+            prevBtn.addEventListener('click', () => changeTextSlide(-1));
+            container.appendChild(prevBtn);
+            
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'carousel-control right-4';
+            nextBtn.innerHTML = '<i class="fa fa-chevron-right"></i>';
+            nextBtn.addEventListener('click', () => changeTextSlide(1));
+            container.appendChild(nextBtn);
+            
+            let interval = setInterval(() => changeTextSlide(1), CONFIG.carouselIntervals.texts);
+            container.addEventListener('mouseenter', () => clearInterval(interval));
+            container.addEventListener('mouseleave', () => {
+                interval = setInterval(() => changeTextSlide(1), CONFIG.carouselIntervals.texts);
+            });
+        }
+
+        // 初始化视频轮播（优化样式）
+        function initVideoCarousel(items) {
+            const container = document.querySelector('.video-container');
+            const indicatorsContainer = container.nextElementSibling;
+            
+            items.forEach((item, index) => {
+                const videoItem = document.createElement('div');
+                videoItem.className = `video-item ${index === 0 ? 'active' : ''}`;
+                
+                if (item.type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = item.url;
+                    img.alt = item.title;
+                    img.className = 'w-full h-full object-cover transition-transform duration-700 hover:scale-105';
+                    videoItem.appendChild(img);
+                } else {
+                    const video = document.createElement('video');
+                    video.className = 'w-full h-full object-cover';
+                    video.setAttribute('playsinline', '');
+                    video.setAttribute('muted', '');
+                    video.setAttribute('loop', '');
+                    
+                    const source = document.createElement('source');
+                    source.src = item.source;
+                    source.type = 'video/mp4';
+                    
+                    video.appendChild(source);
+                    videoItem.appendChild(video);
+                    
+                    if (index === 0) {
+                        video.play().catch(err => console.log('Auto-play prevented:', err));
+                    }
+                }
+                
+                container.appendChild(videoItem);
+                
+                const indicator = document.createElement('button');
+                indicator.className = `indicator ${index === 0 ? 'active' : 'bg-white/50 hover:bg-white/80'}`;
+                indicator.setAttribute('aria-label', `视频 ${index + 1}`);
+                indicator.addEventListener('click', () => goToVideoSlide(index));
+                indicatorsContainer.appendChild(indicator);
+            });
+            
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'carousel-control left-4';
+            prevBtn.innerHTML = '<i class="fa fa-chevron-left"></i>';
+            prevBtn.addEventListener('click', () => changeVideoSlide(-1));
+            container.appendChild(prevBtn);
+            
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'carousel-control right-4';
+            nextBtn.innerHTML = '<i class="fa fa-chevron-right"></i>';
+            nextBtn.addEventListener('click', () => changeVideoSlide(1));
+            container.appendChild(nextBtn);
+            
+            let interval = setInterval(() => changeVideoSlide(1), CONFIG.carouselIntervals.videos);
+            container.addEventListener('mouseenter', () => clearInterval(interval));
+            container.addEventListener('mouseleave', () => {
+                interval = setInterval(() => changeVideoSlide(1), CONFIG.carouselIntervals.videos);
+            });
+        }
+
+        // 切换图片轮播（保持不变）
+        function changeSlide(container, direction) {
+            const slides = container.querySelectorAll('.carousel-item');
+            const indicators = container.nextElementSibling.querySelectorAll('.indicator');
+            const activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            let newIndex = (activeIndex + direction + slides.length) % slides.length;
+            goToSlide(container, newIndex);
+        }
+
+        function goToSlide(container, index) {
+            const slides = container.querySelectorAll('.carousel-item');
+            const indicators = container.nextElementSibling.querySelectorAll('.indicator');
+            
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+                indicator.classList.toggle('bg-white/50', !(i === index));
+            });
+        }
+
+        // 切换文字轮播（保持不变）
+        function changeTextSlide(direction) {
+            const slides = document.querySelectorAll('.text-item');
+            const indicators = document.querySelector('.text-container').nextElementSibling.querySelectorAll('.indicator');
+            const activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            let newIndex = (activeIndex + direction + slides.length) % slides.length;
+            goToTextSlide(newIndex);
+        }
+
+        function goToTextSlide(index) {
+            const slides = document.querySelectorAll('.text-item');
+            const indicators = document.querySelector('.text-container').nextElementSibling.querySelectorAll('.indicator');
+            
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+                indicator.classList.toggle('bg-white/50', !(i === index));
+            });
+        }
+
+        // 切换视频轮播（保持不变）
+        function changeVideoSlide(direction) {
+            const slides = document.querySelectorAll('.video-item');
+            const indicators = document.querySelector('.video-container').nextElementSibling.querySelectorAll('.indicator');
+            const activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            let newIndex = (activeIndex + direction + slides.length) % slides.length;
+            goToVideoSlide(newIndex);
+        }
+
+        function goToVideoSlide(index) {
+            const slides = document.querySelectorAll('.video-item');
+            const indicators = document.querySelector('.video-container').nextElementSibling.querySelectorAll('.indicator');
+            
+            const activeVideo = document.querySelector('.video-item.active video');
+            if (activeVideo) activeVideo.pause();
+            
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+                indicator.classList.toggle('bg-white/50', !(i === index));
+            });
+            
+            const newVideo = slides[index].querySelector('video');
+            if (newVideo) newVideo.play().catch(err => console.log('Auto-play prevented:', err));
+        }
+    </script>
+</body>
+</html>
